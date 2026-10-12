@@ -37,6 +37,16 @@ export default function Footer() {
                 Contacto
               </Link>
             </li>
+            <li>
+              <Link href="/privacidad" className="hover:underline">
+                Privacidad
+              </Link>
+            </li>
+            <li>
+              <Link href="/terminos" className="hover:underline">
+                Términos y condiciones
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
