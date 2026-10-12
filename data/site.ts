@@ -6,7 +6,7 @@ export const site = {
   description:
     "Productos seleccionados para acompañar distintos momentos de tu rutina.",
 
-  whatsapp: "",
+  whatsapp: "5491132261533",
 
   instagram: "",
 
