@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import RitualsSection from "@/components/home/RitualsSection";
 
 export default function Home() {
   return (
@@ -38,6 +39,8 @@ export default function Home() {
             </Link>
           </div>
         </section>
+
+        <RitualsSection />
       </main>
 
       <Footer />
