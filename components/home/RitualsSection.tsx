@@ -3,11 +3,16 @@ import { rituals } from "@/data/rituals";
 
 export default function RitualsSection() {
   return (
-    <section className="mt-24">
-      <h2 className="mb-2 text-3xl font-semibold">Elegí tu ritual</h2>
-      <p className="mb-8 text-neutral-600">
-        Cuatro momentos del día, cuatro formas de empezar.
-      </p>
+    <section id="rituales" className="mt-24 scroll-mt-8">
+      <div className="mb-10 grid gap-4 md:grid-cols-2 md:items-end">
+        <h2 className="text-4xl font-normal md:text-5xl">
+          Un ritual para cada momento
+        </h2>
+        <p className="text-sm text-neutral-600">
+          Cada día tiene ritmos distintos. Por eso organizamos nuestros
+          productos en cuatro momentos: Mañana, Pausa, Bienestar y Descanso.
+        </p>
+      </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {rituals.map((ritual) => (

@@ -1,53 +1,72 @@
 import Link from "next/link";
 import { navigation } from "@/config/navigation";
 
-export default function Footer() {
-  return (
-    <footer className="mt-24 border-t border-neutral-200 bg-[#efe7db]">
-      <div className="mx-auto grid max-w-5xl gap-10 px-6 py-12 md:grid-cols-3">
-        <div>
-          <p className="mb-3 text-2xl font-semibold tracking-widest">KAORI</p>
-          <p className="max-w-xs text-sm text-[#8c8b88]">
-            Pequeños rituales para una vida más equilibrada.
-          </p>
-        </div>
+type FooterProps = {
+  flush?: boolean;
+};
 
-        <nav>
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest">
-            Navegación
-          </p>
-          <ul className="space-y-2 text-sm">
-            {navigation.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="hover:underline">
-                  {item.label}
+export default function Footer({ flush = false }: FooterProps) {
+  return (
+    <footer
+      className={`${flush ? "" : "mt-24"} border-t border-neutral-200 bg-[#f7f4ee]`}
+    >
+      <div className="mx-auto max-w-5xl px-6 pt-14">
+        <div className="grid gap-10 md:grid-cols-[2fr_1fr_1fr]">
+          <div>
+            <p className="mb-3 font-serif text-3xl font-normal tracking-[0.25em]">
+              KAORI
+            </p>
+            <p className="max-w-xs text-sm text-[#8c8b88]">
+              Pequeños rituales para una vida más equilibrada.
+            </p>
+          </div>
+
+          <nav aria-label="Explorar">
+            <p className="mb-4 text-sm font-medium">Explorar</p>
+            <ul className="space-y-2 text-sm text-neutral-600">
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="hover:underline">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="Ayuda">
+            <p className="mb-4 text-sm font-medium">Ayuda</p>
+            <ul className="space-y-2 text-sm text-neutral-600">
+              <li>
+                <Link href="/contacto" className="hover:underline">
+                  Contacto
                 </Link>
               </li>
-            ))}
-          </ul>
-        </nav>
+              <li>
+                <Link href="/privacidad" className="hover:underline">
+                  Privacidad
+                </Link>
+              </li>
+              <li>
+                <Link href="/terminos" className="hover:underline">
+                  Términos y condiciones
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-        <div>
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest">
-            Ayuda
-          </p>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/contacto" className="hover:underline">
-                Contacto
-              </Link>
-            </li>
-            <li>
-              <Link href="/privacidad" className="hover:underline">
-                Privacidad
-              </Link>
-            </li>
-            <li>
-              <Link href="/terminos" className="hover:underline">
-                Términos y condiciones
-              </Link>
-            </li>
-          </ul>
+        <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-neutral-200 py-6 text-xs text-[#8c8b88]">
+          <p>© Kaori. Todos los derechos reservados.</p>
+
+          <div className="flex gap-6">
+            <Link href="/privacidad" className="hover:underline">
+              Política de privacidad
+            </Link>
+            <Link href="/terminos" className="hover:underline">
+              Términos y condiciones
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
