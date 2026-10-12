@@ -1,11 +1,102 @@
-export default function ContactoPage() {
-  return (
-    <main>
-      <h1>Contacto</h1>
+import type { Metadata } from "next";
+import Link from "next/link";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import { site } from "@/data/site";
 
-      <p>
-        Consultanos sobre productos, disponibilidad, pagos o entregas.
-      </p>
-    </main>
+export const metadata: Metadata = {
+  title: "Contacto",
+  description:
+    "Consultanos sobre productos, disponibilidad, pagos o entregas.",
+};
+
+const topics = [
+  {
+    title: "Pagos",
+    text: "Transferencia, Mercado Pago o efectivo.",
+  },
+  {
+    title: "Entregas",
+    text: `Entrega personal o mensajería en ${site.location}. El costo depende de la zona.`,
+  },
+  {
+    title: "Disponibilidad",
+    text: "Si un producto figura como agotado, podés consultar cuándo vuelve a estar disponible.",
+  },
+];
+
+export default function ContactoPage() {
+  const whatsappHref = site.whatsapp
+    ? `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
+        "Hola! Quiero hacer una consulta."
+      )}`
+    : null;
+
+  return (
+    <>
+      <Header />
+
+      <main className="mx-auto max-w-5xl px-6 py-20">
+        <section className="max-w-3xl">
+          <h1 className="mb-6 text-5xl font-semibold leading-tight">
+            Contacto
+          </h1>
+
+          <p className="mb-10 text-lg text-neutral-600">
+            Consultanos sobre productos, disponibilidad, pagos o entregas.
+          </p>
+
+          {whatsappHref ? (
+            <Link
+              href={whatsappHref}
+              className="inline-block rounded-full bg-[#a8b39e] px-6 py-3 text-sm font-medium text-[#2d2d2d]"
+            >
+              Escribinos por WhatsApp
+            </Link>
+          ) : (
+            <div className="rounded-2xl bg-[#efe7db] p-6">
+              <p className="font-semibold">
+                Estamos preparando nuestro canal de consultas
+              </p>
+              <p className="mt-2 text-sm text-neutral-600">
+                Muy pronto vas a poder escribirnos por WhatsApp desde esta
+                página.
+              </p>
+            </div>
+          )}
+        </section>
+
+        <section className="mt-24">
+          <h2 className="mb-8 text-3xl font-semibold">Información útil</h2>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {topics.map((topic) => (
+              <div
+                key={topic.title}
+                className="rounded-2xl border border-[#a8b39e] p-6"
+              >
+                <h3 className="mb-3 text-xl font-semibold">{topic.title}</h3>
+                <p className="text-sm text-neutral-600">{topic.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-24 max-w-3xl">
+          <h2 className="mb-6 text-3xl font-semibold">
+            ¿Todavía no sabés qué elegir?
+          </h2>
+
+          <Link
+            href="/productos"
+            className="inline-block rounded-full border border-[#a8b39e] px-6 py-3 text-sm font-medium"
+          >
+            Ver productos
+          </Link>
+        </section>
+      </main>
+
+      <Footer />
+    </>
   );
 }
