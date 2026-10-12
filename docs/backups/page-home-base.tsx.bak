@@ -1,0 +1,18 @@
+import Header from "@/components/layout/Header";
+
+export default function Home() {
+  return (
+    <>
+      <Header />
+
+      <main>
+        <h2>Pequeños rituales para una vida más equilibrada.</h2>
+
+        <p>
+          Descubrí productos seleccionados para acompañar distintos momentos de
+          tu rutina.
+        </p>
+      </main>
+    </>
+  );
+}
