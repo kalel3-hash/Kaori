@@ -10,10 +10,10 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link
       href={`/productos/${product.slug}`}
-      className="group block rounded-2xl bg-[#efe7db] p-6 transition-colors hover:bg-[#e6dccb]"
+      className="group block rounded-xl bg-[#efe7db] p-6 transition-colors hover:bg-[#e6dccb]"
     >
       <article className="flex h-full flex-col gap-6">
-        <div className="relative aspect-square overflow-hidden rounded-xl bg-[#f7f4ee]">
+        <div className="relative aspect-square overflow-hidden rounded-lg bg-[#f7f4ee]">
           {product.image && (
             <Image
               src={product.image}
@@ -30,7 +30,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             <p className="mb-1 text-xs uppercase tracking-widest text-[#8c8b88]">
               {product.brand}
             </p>
-            <h3 className="text-lg font-semibold">{product.name}</h3>
+            <h3 className="text-2xl font-normal">{product.name}</h3>
           </div>
 
           <div className="text-sm">

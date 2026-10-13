@@ -5,9 +5,9 @@ type RitualNavProps = {
   activeId?: string;
 };
 
-const base = "rounded-full border px-4 py-2 text-sm";
-const active = "border-[#a8b39e] bg-[#a8b39e]";
-const inactive = "border-neutral-300 hover:border-[#a8b39e]";
+const base = "rounded-md border px-4 py-2 text-sm transition-colors";
+const active = "border-olive bg-olive text-white";
+const inactive = "border-neutral-300 hover:border-olive";
 
 export default function RitualNav({ activeId }: RitualNavProps) {
   return (

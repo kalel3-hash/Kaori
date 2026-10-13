@@ -8,8 +8,8 @@ type ProductGridProps = {
 export default function ProductGrid({ products }: ProductGridProps) {
   if (products.length === 0) {
     return (
-      <div className="rounded-2xl bg-[#efe7db] p-10 text-center">
-        <p className="text-lg font-semibold">
+      <div className="rounded-xl bg-[#efe7db] p-10 text-center">
+        <p className="font-serif text-2xl">
           Estamos preparando nuestra primera selección
         </p>
         <p className="mt-2 text-sm text-[#8c8b88]">

@@ -72,7 +72,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <main className="mx-auto max-w-5xl px-6 py-20">
         <div className="grid gap-12 md:grid-cols-2">
-          <div className="relative aspect-square overflow-hidden rounded-2xl bg-[#efe7db]">
+          <div className="relative aspect-square overflow-hidden rounded-xl bg-[#e4dcc7]">
             {product.image && (
               <Image
                 src={product.image}
@@ -90,7 +90,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               {product.brand}
             </p>
 
-            <h1 className="mb-4 text-4xl font-semibold leading-tight">
+            <h1 className="mb-4 text-5xl font-normal leading-tight">
               {product.name}
             </h1>
 
@@ -117,7 +117,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             )}
 
             {product.description && (
-              <p className="mb-8 mt-4 text-neutral-600">
+              <p className="mb-8 mt-4 text-base text-neutral-600">
                 {product.description}
               </p>
             )}
@@ -125,13 +125,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <div className="mt-4">
               <Link
                 href={contactHref}
-                className="inline-block rounded-full bg-[#a8b39e] px-6 py-3 text-sm font-medium text-[#2d2d2d]"
+                className="inline-block rounded-md bg-olive px-6 py-3 text-sm font-medium text-white"
               >
                 {buttonLabel}
               </Link>
             </div>
 
-            <div className="mt-10 rounded-2xl border border-[#a8b39e] p-6 text-sm text-neutral-600">
+            <div className="mt-10 rounded-xl bg-[#efe7db] p-6 text-sm text-neutral-600">
               <p className="mb-2">
                 <span className="font-medium text-[#2d2d2d]">Pagos: </span>
                 transferencia, Mercado Pago o efectivo.
@@ -146,7 +146,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
         {related.length > 0 && (
           <section className="mt-24">
-            <h2 className="mb-8 text-3xl font-semibold">
+            <h2 className="mb-8 text-4xl font-normal">
               Más para este ritual
             </h2>
             <ProductGrid products={related} />

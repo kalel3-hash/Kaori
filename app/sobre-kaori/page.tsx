@@ -37,31 +37,31 @@ export default function SobreKaoriPage() {
 
       <main className="mx-auto max-w-5xl px-6 py-20">
         <section className="max-w-3xl">
-          <h1 className="mb-6 text-5xl font-semibold leading-tight">
+          <h1 className="mb-6 text-5xl font-normal leading-tight">
             Sobre Kaori
           </h1>
 
-          <p className="mb-4 text-lg text-neutral-600">
+          <p className="mb-4 text-base text-neutral-600">
             Kaori es una marca de bienestar natural que reúne productos
             seleccionados para acompañar pequeños rituales cotidianos.
           </p>
 
-          <p className="text-lg text-neutral-600">
+          <p className="text-base text-neutral-600">
             Creemos en los momentos simples y repetibles: una pausa a media
             tarde, un comienzo de día más tranquilo, un cierre sin apuro.
           </p>
         </section>
 
         <section className="mt-24">
-          <h2 className="mb-8 text-3xl font-semibold">Lo que nos guía</h2>
+          <h2 className="mb-8 text-4xl font-normal">Lo que nos guía</h2>
 
           <div className="grid gap-4 md:grid-cols-3">
             {principles.map((principle) => (
               <div
                 key={principle.title}
-                className="rounded-2xl bg-[#efe7db] p-6"
+                className="rounded-xl bg-[#efe7db] p-6"
               >
-                <h3 className="mb-3 text-xl font-semibold">
+                <h3 className="mb-3 text-2xl font-normal">
                   {principle.title}
                 </h3>
                 <p className="text-sm text-neutral-600">{principle.text}</p>
@@ -71,7 +71,7 @@ export default function SobreKaoriPage() {
         </section>
 
         <section className="mt-24 max-w-3xl">
-          <h2 className="mb-4 text-3xl font-semibold">Marcas y productos</h2>
+          <h2 className="mb-4 text-4xl font-normal">Marcas y productos</h2>
 
           <p className="mb-4 text-neutral-600">
             Kaori es una marca independiente. Cada producto indica con claridad
@@ -85,21 +85,21 @@ export default function SobreKaoriPage() {
         </section>
 
         <section className="mt-24 max-w-3xl">
-          <h2 className="mb-6 text-3xl font-semibold">
+          <h2 className="mb-6 text-4xl font-normal">
             ¿Querés conocer la selección?
           </h2>
 
           <div className="flex flex-wrap gap-4">
             <Link
               href="/productos"
-              className="rounded-full bg-[#a8b39e] px-6 py-3 text-sm font-medium text-[#2d2d2d]"
+              className="rounded-md bg-olive px-6 py-3 text-sm font-medium text-white"
             >
               Ver productos
             </Link>
 
             <Link
               href={contactHref}
-              className="rounded-full border border-[#a8b39e] px-6 py-3 text-sm font-medium"
+              className="rounded-md border border-olive px-6 py-3 text-sm font-medium"
             >
               {contactLabel}
             </Link>

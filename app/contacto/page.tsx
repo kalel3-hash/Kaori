@@ -38,24 +38,24 @@ export default function ContactoPage() {
 
       <main className="mx-auto max-w-5xl px-6 py-20">
         <section className="max-w-3xl">
-          <h1 className="mb-6 text-5xl font-semibold leading-tight">
+          <h1 className="mb-6 text-5xl font-normal leading-tight">
             Contacto
           </h1>
 
-          <p className="mb-10 text-lg text-neutral-600">
+          <p className="mb-10 text-base text-neutral-600">
             Consultanos sobre productos, disponibilidad, pagos o entregas.
           </p>
 
           {whatsappHref ? (
             <Link
               href={whatsappHref}
-              className="inline-block rounded-full bg-[#a8b39e] px-6 py-3 text-sm font-medium text-[#2d2d2d]"
+              className="inline-block rounded-md bg-olive px-6 py-3 text-sm font-medium text-white"
             >
               Escribinos por WhatsApp
             </Link>
           ) : (
-            <div className="rounded-2xl bg-[#efe7db] p-6">
-              <p className="font-semibold">
+            <div className="rounded-xl bg-[#efe7db] p-6">
+              <p className="font-medium">
                 Estamos preparando nuestro canal de consultas
               </p>
               <p className="mt-2 text-sm text-neutral-600">
@@ -67,15 +67,15 @@ export default function ContactoPage() {
         </section>
 
         <section className="mt-24">
-          <h2 className="mb-8 text-3xl font-semibold">Información útil</h2>
+          <h2 className="mb-8 text-4xl font-normal">Información útil</h2>
 
           <div className="grid gap-4 md:grid-cols-3">
             {topics.map((topic) => (
               <div
                 key={topic.title}
-                className="rounded-2xl border border-[#a8b39e] p-6"
+                className="rounded-xl bg-[#efe7db] p-6"
               >
-                <h3 className="mb-3 text-xl font-semibold">{topic.title}</h3>
+                <h3 className="mb-3 text-2xl font-normal">{topic.title}</h3>
                 <p className="text-sm text-neutral-600">{topic.text}</p>
               </div>
             ))}
@@ -83,13 +83,13 @@ export default function ContactoPage() {
         </section>
 
         <section className="mt-24 max-w-3xl">
-          <h2 className="mb-6 text-3xl font-semibold">
+          <h2 className="mb-6 text-4xl font-normal">
             ¿Todavía no sabés qué elegir?
           </h2>
 
           <Link
             href="/productos"
-            className="inline-block rounded-full border border-[#a8b39e] px-6 py-3 text-sm font-medium"
+            className="inline-block rounded-md border border-olive px-6 py-3 text-sm font-medium"
           >
             Ver productos
           </Link>

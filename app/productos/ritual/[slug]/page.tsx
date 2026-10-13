@@ -30,11 +30,11 @@ export default async function RitualPage({ params }: RitualPageProps) {
       <Header />
 
       <main className="mx-auto max-w-5xl px-6 py-20">
-        <p className="mb-4 text-sm uppercase tracking-[0.3em] text-neutral-500">
+        <p className="mb-4 text-xs uppercase tracking-[0.3em] text-[#8c8b88]">
           Ritual
         </p>
-        <h1 className="mb-4 text-4xl font-semibold">{ritual.name}</h1>
-        <p className="mb-8 max-w-2xl text-lg text-neutral-600">
+        <h1 className="mb-4 text-5xl font-normal">{ritual.name}</h1>
+        <p className="mb-8 max-w-2xl text-base text-neutral-600">
           {ritual.description}
         </p>
 
@@ -44,16 +44,14 @@ export default async function RitualPage({ params }: RitualPageProps) {
 
         <ProductGrid products={products} />
 
-        <section className="mt-20 rounded-2xl border border-[#a8b39e] p-8 text-center">
-          <h2 className="mb-2 text-2xl font-semibold">
-            ¿No sabés qué elegir?
-          </h2>
-          <p className="mb-6 text-neutral-600">
+        <section className="mt-20 rounded-xl bg-[#efe7db] p-10 text-center">
+          <h2 className="mb-3 text-3xl font-normal">¿No sabés qué elegir?</h2>
+          <p className="mx-auto mb-8 max-w-xl text-sm text-neutral-600">
             Escribinos y te orientamos.
           </p>
           <Link
             href="/contacto"
-            className="inline-block rounded-full bg-[#a8b39e] px-6 py-3 text-sm font-medium text-[#2d2d2d]"
+            className="inline-block rounded-md bg-olive px-6 py-3 text-sm font-medium text-white"
           >
             Consultar
           </Link>
