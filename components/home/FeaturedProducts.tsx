@@ -2,8 +2,8 @@ import Link from "next/link";
 import ProductGrid from "@/components/product/ProductGrid";
 import { getProducts } from "@/lib/products";
 
-export default function FeaturedProducts() {
-  const products = getProducts().slice(0, 6);
+export default async function FeaturedProducts() {
+  const products = (await getProducts()).slice(0, 6);
 
   return (
     <section className="mt-24">

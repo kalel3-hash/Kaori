@@ -23,7 +23,7 @@ export default async function RitualPage({ params }: RitualPageProps) {
     notFound();
   }
 
-  const products = getProductsByRitual(ritual.id);
+  const products = await getProductsByRitual(ritual.id);
 
   return (
     <>

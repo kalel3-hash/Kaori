@@ -17,8 +17,8 @@ type ProductPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export function generateStaticParams() {
-  const products = getProducts();
+export async function generateStaticParams() {
+  const products = await getProducts();
 
   if (products.length === 0) {
     return [{ slug: "__placeholder__" }];
@@ -31,7 +31,7 @@ export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     return { title: "Producto" };
@@ -45,14 +45,14 @@ export async function generateMetadata({
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     notFound();
   }
 
   const ritual = rituals.find((item) => item.id === product.ritual);
-  const related = getRelatedProducts(product.slug);
+  const related = await getRelatedProducts(product.slug);
 
   const message = product.available
     ? `Hola! Quiero consultar por ${product.name} (${product.brand}).`
@@ -72,7 +72,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <main className="mx-auto max-w-5xl px-6 py-20">
         <div className="grid gap-12 md:grid-cols-2">
-          <div className="relative aspect-square overflow-hidden rounded-xl bg-[#e4dcc7]">
+          <div className="relative aspect-square overflow-hidden rounded-xl bg-white">
             {product.image && (
               <Image
                 src={product.image}
@@ -80,7 +80,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 fill
                 priority
                 sizes="(min-width: 768px) 440px, 90vw"
-                className="object-cover"
+                className="object-contain"
               />
             )}
           </div>

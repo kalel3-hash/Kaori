@@ -5,8 +5,8 @@ import ProductGrid from "@/components/product/ProductGrid";
 import RitualNav from "@/components/ritual/RitualNav";
 import { getProducts } from "@/lib/products";
 
-export default function ProductosPage() {
-  const products = getProducts();
+export default async function ProductosPage() {
+  const products = await getProducts();
 
   return (
     <>

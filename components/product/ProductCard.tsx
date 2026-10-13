@@ -13,14 +13,14 @@ export default function ProductCard({ product }: ProductCardProps) {
       className="group block rounded-xl bg-[#efe7db] p-6 transition-colors hover:bg-[#e6dccb]"
     >
       <article className="flex h-full flex-col gap-6">
-        <div className="relative aspect-square overflow-hidden rounded-lg bg-[#f7f4ee]">
+        <div className="relative aspect-square overflow-hidden rounded-lg bg-white">
           {product.image && (
             <Image
               src={product.image}
               alt={product.name}
               fill
               sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 90vw"
-              className="object-cover"
+              className="object-contain"
             />
           )}
         </div>
