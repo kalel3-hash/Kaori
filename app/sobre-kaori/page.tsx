@@ -74,8 +74,15 @@ export default function SobreKaoriPage() {
           <h2 className="mb-4 text-4xl font-normal">Marcas y productos</h2>
 
           <p className="mb-4 text-neutral-600">
-            Sendero Kaori es una marca independiente. Cada producto indica con claridad
-            a qué marca pertenece, para que siempre sepas qué estás eligiendo.
+            Sendero Kaori es una marca independiente que reúne productos de
+            distintas marcas. Cada producto indica con claridad a qué marca
+            pertenece, para que siempre sepas qué estás eligiendo.
+          </p>
+
+          <p className="mb-4 text-neutral-600">
+            Hoy la selección incluye productos de Just, de la que somos
+            representantes en Argentina. Las marcas, nombres e imágenes de
+            cada producto pertenecen a sus titulares.
           </p>
 
           <p className="text-neutral-600">
