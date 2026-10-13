@@ -12,7 +12,7 @@ export default function Footer({ flush = false }: FooterProps) {
       className={`${flush ? "" : "mt-24"} border-t border-neutral-200 bg-[#f7f4ee]`}
     >
       <div className="mx-auto max-w-5xl px-6 pt-14">
-        <div className="grid gap-10 md:grid-cols-[2fr_1fr_1fr]">
+        <div className="grid gap-10 md:grid-cols-[2fr_1fr]">
           <div>
             <Image
               src="/images/logo.png"
@@ -36,27 +36,6 @@ export default function Footer({ flush = false }: FooterProps) {
                   </Link>
                 </li>
               ))}
-            </ul>
-          </nav>
-
-          <nav aria-label="Ayuda">
-            <p className="mb-4 text-sm font-medium">Ayuda</p>
-            <ul className="space-y-2 text-sm text-neutral-600">
-              <li>
-                <Link href="/contacto" className="hover:underline">
-                  Contacto
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacidad" className="hover:underline">
-                  Política de privacidad
-                </Link>
-              </li>
-              <li>
-                <Link href="/terminos" className="hover:underline">
-                  Términos y condiciones
-                </Link>
-              </li>
             </ul>
           </nav>
         </div>
