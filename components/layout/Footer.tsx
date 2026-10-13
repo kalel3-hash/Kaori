@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { navigation } from "@/config/navigation";
 
@@ -13,9 +14,13 @@ export default function Footer({ flush = false }: FooterProps) {
       <div className="mx-auto max-w-5xl px-6 pt-14">
         <div className="grid gap-10 md:grid-cols-[2fr_1fr_1fr]">
           <div>
-            <p className="mb-3 font-serif text-3xl font-normal tracking-[0.25em]">
-              KAORI
-            </p>
+            <Image
+              src="/images/logo.png"
+              alt="Sendero Kaori"
+              width={871}
+              height={402}
+              className="mb-3 h-24 w-auto -ml-2"
+            />
             <p className="max-w-xs text-sm text-[#8c8b88]">
               Pequeños rituales para una vida más equilibrada.
             </p>
@@ -57,7 +62,7 @@ export default function Footer({ flush = false }: FooterProps) {
         </div>
 
         <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-neutral-200 py-6 text-xs text-[#8c8b88]">
-          <p>© Kaori. Todos los derechos reservados.</p>
+          <p>© Sendero Kaori. Todos los derechos reservados.</p>
 
           <div className="flex gap-6">
             <Link href="/privacidad" className="hover:underline">

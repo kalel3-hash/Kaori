@@ -4,7 +4,7 @@ import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Política de privacidad",
-  description: "Cómo Kaori trata los datos personales de quienes la consultan.",
+  description: "Cómo Sendero Kaori trata los datos personales de quienes la consultan.",
 };
 
 const sections = [

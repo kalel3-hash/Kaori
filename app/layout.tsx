@@ -20,7 +20,10 @@ const cormorant = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Kaori",
+  title: {
+    default: "Sendero Kaori",
+    template: "%s | Sendero Kaori",
+  },
   description: "Pequeños rituales para una vida más equilibrada.",
 };
 

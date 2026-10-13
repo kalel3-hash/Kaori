@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { navigation } from "@/config/navigation";
 import MobileMenu from "@/components/layout/MobileMenu";
@@ -7,11 +8,18 @@ export default function Header() {
     <header className="relative border-b border-neutral-200 bg-[#f7f4ee]">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-6 px-6 py-4">
         <div className="flex items-center gap-x-10">
-          <Link
-            href="/"
-            className="font-serif text-3xl font-normal tracking-[0.25em]"
-          >
-            KAORI
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/images/logo-symbol.png"
+              alt=""
+              width={593}
+              height={257}
+              priority
+              className="h-11 w-auto"
+            />
+            <span className="font-serif text-2xl font-normal tracking-wide">
+              Sendero Kaori
+            </span>
           </Link>
 
           <nav aria-label="Principal" className="hidden md:block">

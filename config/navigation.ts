@@ -8,7 +8,7 @@ export const navigation = [
     href: "/productos",
   },
   {
-    label: "Sobre Kaori",
+    label: "Nosotros",
     href: "/sobre-kaori",
   },
   {

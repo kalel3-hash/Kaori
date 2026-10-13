@@ -4,14 +4,14 @@ import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Términos y condiciones",
-  description: "Condiciones de uso del sitio y de las consultas y pedidos de Kaori.",
+  description: "Condiciones de uso del sitio y de las consultas y pedidos de Sendero Kaori.",
 };
 
 const sections = [
   {
     title: "Sobre este sitio",
     paragraphs: [
-      "Kaori es una marca independiente de bienestar natural. Este sitio es informativo y comercial: permite conocer los productos, sus precios y su disponibilidad. No tiene carrito ni pagos en línea. Los pedidos se consultan y se confirman por WhatsApp.",
+      "Sendero Kaori es una marca independiente de bienestar natural. Este sitio es informativo y comercial: permite conocer los productos, sus precios y su disponibilidad. No tiene carrito ni pagos en línea. Los pedidos se consultan y se confirman por WhatsApp.",
     ],
   },
   {
@@ -54,7 +54,7 @@ const sections = [
   {
     title: "Propiedad intelectual",
     paragraphs: [
-      "Los textos, el diseño y el resto de los contenidos propios de Kaori no pueden reproducirse sin autorización.",
+      "Los textos, el diseño y el resto de los contenidos propios de Sendero Kaori no pueden reproducirse sin autorización.",
     ],
   },
   {

@@ -5,9 +5,9 @@ import Footer from "@/components/layout/Footer";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Sobre Kaori",
+  title: "Sobre Sendero Kaori",
   description:
-    "Kaori es una marca de bienestar natural que reúne productos seleccionados para acompañar pequeños rituales cotidianos.",
+    "Sendero Kaori es una marca de bienestar natural que reúne productos seleccionados para acompañar pequeños rituales cotidianos.",
 };
 
 const principles = [
@@ -38,11 +38,11 @@ export default function SobreKaoriPage() {
       <main className="mx-auto max-w-5xl px-6 py-20">
         <section className="max-w-3xl">
           <h1 className="mb-6 text-5xl font-normal leading-tight">
-            Sobre Kaori
+            Sobre Sendero Kaori
           </h1>
 
           <p className="mb-4 text-base text-neutral-600">
-            Kaori es una marca de bienestar natural que reúne productos
+            Sendero Kaori es una marca de bienestar natural que reúne productos
             seleccionados para acompañar pequeños rituales cotidianos.
           </p>
 
@@ -74,7 +74,7 @@ export default function SobreKaoriPage() {
           <h2 className="mb-4 text-4xl font-normal">Marcas y productos</h2>
 
           <p className="mb-4 text-neutral-600">
-            Kaori es una marca independiente. Cada producto indica con claridad
+            Sendero Kaori es una marca independiente. Cada producto indica con claridad
             a qué marca pertenece, para que siempre sepas qué estás eligiendo.
           </p>
 

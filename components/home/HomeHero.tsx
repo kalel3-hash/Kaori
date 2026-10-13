@@ -44,7 +44,7 @@ export default function HomeHero() {
 
       <ImageSlot
         src={homeImages.hero}
-        alt="Kaori: pequeños rituales cotidianos"
+        alt="Sendero Kaori: pequeños rituales cotidianos"
         sizes="(min-width: 768px) 50vw, 100vw"
         priority
         className="aspect-[4/3] md:absolute md:inset-y-0 md:right-0 md:aspect-auto md:w-1/2"

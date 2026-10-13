@@ -1,5 +1,5 @@
 export const site = {
-  name: "Kaori",
+  name: "Sendero Kaori",
 
   slogan: "Pequeños rituales para una vida más equilibrada.",
 

@@ -36,12 +36,12 @@ export default function AboutSection() {
             href="/sobre-kaori"
             className="text-sm font-medium hover:underline"
           >
-            Conocer Kaori →
+            Conocer Sendero Kaori →
           </Link>
         </div>
 
         <p className="mb-8 max-w-xl text-neutral-600">
-          Kaori reúne productos seleccionados para acompañar tu vida cotidiana
+          Sendero Kaori reúne productos seleccionados para acompañar tu vida cotidiana
           con más calma, naturaleza y equilibrio. Inspirada en la simplicidad
           japonesa.
         </p>
