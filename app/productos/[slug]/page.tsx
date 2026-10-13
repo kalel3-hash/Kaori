@@ -117,7 +117,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             )}
 
             {product.description && (
-              <p className="mb-8 mt-4 text-base text-neutral-600">
+              <p className="mb-8 mt-4 whitespace-pre-line text-base text-neutral-600">
                 {product.description}
               </p>
             )}
