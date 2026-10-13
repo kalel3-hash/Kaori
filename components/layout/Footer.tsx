@@ -49,7 +49,7 @@ export default function Footer({ flush = false }: FooterProps) {
               </li>
               <li>
                 <Link href="/privacidad" className="hover:underline">
-                  Privacidad
+                  Política de privacidad
                 </Link>
               </li>
               <li>

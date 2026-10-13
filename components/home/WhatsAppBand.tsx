@@ -12,7 +12,7 @@ export default function WhatsAppBand() {
     <section className="mt-24 bg-olive text-white">
       <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-6 px-6 py-12">
         <div>
-          <h2 className="mb-1 text-3xl font-normal md:text-4xl">
+          <h2 className="mb-3 text-3xl font-normal md:text-4xl">
             ¿No sabés por dónde empezar?
           </h2>
           <p className="text-sm text-white/80">
@@ -22,7 +22,7 @@ export default function WhatsAppBand() {
 
         <Link
           href={href}
-          className="rounded-md border border-white px-6 py-3 text-sm font-medium"
+          className="rounded-md bg-white px-7 py-3.5 text-sm font-medium text-olive hover:bg-white/90"
         >
           Hablar por WhatsApp
         </Link>

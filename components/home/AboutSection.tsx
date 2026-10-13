@@ -28,23 +28,22 @@ export default function AboutSection() {
       />
 
       <div>
-        <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
-          <h2 className="text-4xl font-normal md:text-5xl">
-            Bienestar en las pequeñas cosas
-          </h2>
-          <Link
-            href="/sobre-kaori"
-            className="text-sm font-medium hover:underline"
-          >
-            Conocer Sendero Kaori →
-          </Link>
-        </div>
+        <h2 className="mb-6 text-4xl font-normal md:text-5xl">
+          Bienestar en las pequeñas cosas
+        </h2>
 
-        <p className="mb-8 max-w-xl text-neutral-600">
+        <p className="mb-4 max-w-xl text-neutral-600">
           Sendero Kaori reúne productos seleccionados para acompañar tu vida cotidiana
           con más calma, naturaleza y equilibrio. Inspirada en la simplicidad
           japonesa.
         </p>
+
+        <Link
+          href="/sobre-kaori"
+          className="mb-8 inline-block text-sm font-medium hover:underline"
+        >
+          Conocer Sendero Kaori →
+        </Link>
 
         <div className="grid gap-6 sm:grid-cols-3">
           {principles.map((principle) => (
