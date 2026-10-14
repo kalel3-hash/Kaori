@@ -3,7 +3,7 @@
 // Si una ruta queda vacía, se muestra un bloque de color en su lugar.
 export const homeImages = {
   hero: "/images/hero.jpg",
-  about: "",
+  about: "/images/sobre.jpg",
   rituals: {
     manana: "/images/rituals/manana.jpg",
     pausa: "/images/rituals/pausa.jpg",
