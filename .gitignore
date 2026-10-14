@@ -41,3 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 data/products.dev.ts
+
+# fotos pendientes de subir (las maneja scripts/subir-fotos.ps1)
+fotos-nuevas/
