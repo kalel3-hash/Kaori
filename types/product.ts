@@ -8,4 +8,5 @@ export type Product = {
   available: boolean;
   description?: string;
   image?: string;
+  gallery?: string[];
 };

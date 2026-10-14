@@ -17,6 +17,7 @@ const REQUIRED_HEADERS = [
 ];
 
 const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+const MAX_EXTRA_IMAGES = 5;
 const IMAGE_PATTERN = /^[A-Za-z0-9][A-Za-z0-9._-]*\.(png|jpe?g|webp|avif)$/i;
 
 export function parseCsv(text: string): string[][] {
@@ -199,6 +200,19 @@ export function parseCatalog(text: string): CatalogResult {
       return;
     }
 
+    const extraNames = Array.from(
+      new Set(
+        column(row, "imagenes_extra")
+          .split(/[\s;,]+/)
+          .filter(Boolean)
+      )
+    ).slice(0, MAX_EXTRA_IMAGES);
+
+    if (extraNames.some((name) => !IMAGE_PATTERN.test(name))) {
+      skipped.push(`${label}: nombre inválido en "imagenes_extra".`);
+      return;
+    }
+
     seen.add(slug);
     products.push({
       id: slug,
@@ -210,6 +224,10 @@ export function parseCatalog(text: string): CatalogResult {
       available,
       description: description || undefined,
       image: imageName ? `/images/products/${imageName}` : undefined,
+      gallery:
+        extraNames.length > 0
+          ? extraNames.map((name) => `/images/products/${name}`)
+          : undefined,
     });
   });
 

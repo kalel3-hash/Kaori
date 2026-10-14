@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ProductGallery from "@/components/product/ProductGallery";
 import ProductGrid from "@/components/product/ProductGrid";
 import { rituals } from "@/data/rituals";
 import { site } from "@/data/site";
@@ -53,6 +53,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   const ritual = rituals.find((item) => item.id === product.ritual);
   const related = await getRelatedProducts(product.slug);
+  const images = [product.image, ...(product.gallery ?? [])].filter(
+    (src): src is string => Boolean(src)
+  );
 
   const message = product.available
     ? `Hola! Quiero consultar por ${product.name} (${product.brand}).`
@@ -72,18 +75,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <main className="mx-auto max-w-5xl px-6 py-20">
         <div className="grid gap-12 md:grid-cols-2">
-          <div className="relative aspect-square overflow-hidden rounded-xl bg-white">
-            {product.image && (
-              <Image
-                src={product.image}
-                alt={product.name}
-                fill
-                priority
-                sizes="(min-width: 768px) 440px, 90vw"
-                className="object-contain"
-              />
-            )}
-          </div>
+          <ProductGallery images={images} alt={product.name} />
 
           <div className="flex flex-col justify-center">
             <p className="mb-2 text-xs uppercase tracking-widest text-[#8c8b88]">
