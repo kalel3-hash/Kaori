@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ComboBuilder from "@/components/combo/ComboBuilder";
+import ComboBuilderWithParams from "@/components/combo/ComboBuilderWithParams";
 import { site } from "@/data/site";
 import { COMBO_MIN_ITEMS } from "@/lib/combo";
 import { getProducts } from "@/lib/products";
@@ -42,7 +44,16 @@ export default async function CombosPage() {
             </p>
           </div>
         ) : (
-          <ComboBuilder products={products} whatsapp={site.whatsapp} />
+          <Suspense
+            fallback={
+              <ComboBuilder products={products} whatsapp={site.whatsapp} />
+            }
+          >
+            <ComboBuilderWithParams
+              products={products}
+              whatsapp={site.whatsapp}
+            />
+          </Suspense>
         )}
       </main>
 

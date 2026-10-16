@@ -14,13 +14,21 @@ import { Product } from "@/types/product";
 type ComboBuilderProps = {
   products: Product[];
   whatsapp: string;
+  // Producto que llega ya tildado (por ejemplo, desde su ficha).
+  initialSlug?: string | null;
 };
 
 export default function ComboBuilder({
   products,
   whatsapp,
+  initialSlug = null,
 }: ComboBuilderProps) {
-  const [selected, setSelected] = useState<string[]>([]);
+  const [selected, setSelected] = useState<string[]>(() =>
+    initialSlug &&
+    products.some((product) => product.slug === initialSlug && product.available)
+      ? [initialSlug]
+      : []
+  );
 
   const items = selected
     .map((slug) => products.find((product) => product.slug === slug))

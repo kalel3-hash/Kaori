@@ -115,11 +115,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
             {product.available && (product.comboDiscount ?? 0) > 0 && (
               <p className="mb-2 text-sm text-olive">
-                {`${product.comboDiscount}% off en combo. `}
-                <Link href="/combos" className="underline">
-                  Armá tu combo
-                </Link>{" "}
-                sumándolo a otro producto.
+                {`${product.comboDiscount}% off en combo, sumándolo a otro producto.`}
               </p>
             )}
 
@@ -135,13 +131,22 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </p>
             )}
 
-            <div className="mt-4">
+            <div className="mt-4 flex flex-wrap gap-3">
               <Link
                 href={contactHref}
                 className="press inline-block rounded-md bg-olive px-6 py-3 text-sm font-medium text-white"
               >
                 {buttonLabel}
               </Link>
+
+              {product.available && (product.comboDiscount ?? 0) > 0 && (
+                <Link
+                  href={`/combos?agregar=${product.slug}`}
+                  className="press inline-block rounded-md border border-olive px-6 py-3 text-sm font-medium text-olive"
+                >
+                  Sumar a un combo
+                </Link>
+              )}
             </div>
 
             <div className="mt-10 rounded-xl bg-[#efe7db] p-6 text-sm text-neutral-600">
