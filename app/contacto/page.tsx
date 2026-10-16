@@ -49,7 +49,7 @@ export default function ContactoPage() {
           {whatsappHref ? (
             <Link
               href={whatsappHref}
-              className="inline-block rounded-md bg-olive px-6 py-3 text-sm font-medium text-white"
+              className="press inline-block rounded-md bg-olive px-6 py-3 text-sm font-medium text-white"
             >
               Escribinos por WhatsApp
             </Link>
@@ -89,7 +89,7 @@ export default function ContactoPage() {
 
           <Link
             href="/productos"
-            className="inline-block rounded-md border border-olive px-6 py-3 text-sm font-medium"
+            className="press inline-block rounded-md border border-olive px-6 py-3 text-sm font-medium"
           >
             Ver productos
           </Link>

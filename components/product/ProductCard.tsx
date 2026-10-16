@@ -4,13 +4,15 @@ import { Product } from "@/types/product";
 
 type ProductCardProps = {
   product: Product;
+  index?: number;
 };
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product, index = 0 }: ProductCardProps) {
   return (
     <Link
       href={`/productos/${product.slug}`}
-      className="group block rounded-xl bg-[#efe7db] p-6 transition-colors hover:bg-[#e6dccb]"
+      className="group enter press-card block rounded-xl bg-[#efe7db] p-6 hover:bg-[#e6dccb]"
+      style={{ "--i": Math.min(index, 5) } as React.CSSProperties}
     >
       <article className="flex h-full flex-col gap-6">
         <div className="relative aspect-square overflow-hidden rounded-lg bg-white">

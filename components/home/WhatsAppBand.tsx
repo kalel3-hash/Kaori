@@ -22,7 +22,7 @@ export default function WhatsAppBand() {
 
         <Link
           href={href}
-          className="rounded-md bg-white px-7 py-3.5 text-sm font-medium text-olive hover:bg-white/90"
+          className="press rounded-md bg-white px-7 py-3.5 text-sm font-medium text-olive hover:bg-white/90"
         >
           Hablar por WhatsApp
         </Link>

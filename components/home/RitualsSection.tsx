@@ -15,8 +15,8 @@ export default function RitualsSection() {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {rituals.map((ritual) => (
-          <RitualCard key={ritual.id} ritual={ritual} />
+        {rituals.map((ritual, index) => (
+          <RitualCard key={ritual.id} ritual={ritual} index={index} />
         ))}
       </div>
     </section>

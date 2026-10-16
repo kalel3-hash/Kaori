@@ -117,7 +117,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <div className="mt-4">
               <Link
                 href={contactHref}
-                className="inline-block rounded-md bg-olive px-6 py-3 text-sm font-medium text-white"
+                className="press inline-block rounded-md bg-olive px-6 py-3 text-sm font-medium text-white"
               >
                 {buttonLabel}
               </Link>

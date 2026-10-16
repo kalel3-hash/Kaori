@@ -23,14 +23,14 @@ export default function HomeHero() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="#rituales"
-              className="rounded-md bg-olive px-6 py-3 text-sm font-medium text-white"
+              className="press rounded-md bg-olive px-6 py-3 text-sm font-medium text-white"
             >
               Explorar rituales →
             </Link>
 
             <Link
               href="/productos"
-              className="rounded-md border border-[#8c8b88] px-6 py-3 text-sm font-medium"
+              className="press rounded-md border border-[#8c8b88] px-6 py-3 text-sm font-medium"
             >
               Ver productos
             </Link>

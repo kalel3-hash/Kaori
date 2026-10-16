@@ -37,7 +37,7 @@ export default function Header() {
 
         <Link
           href="/productos"
-          className="hidden rounded-md bg-olive px-5 py-2.5 text-sm font-medium text-white md:inline-block"
+          className="press hidden rounded-md bg-olive px-5 py-2.5 text-sm font-medium text-white md:inline-block"
         >
           Ver productos
         </Link>

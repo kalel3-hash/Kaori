@@ -15,7 +15,7 @@ export default function MobileMenu() {
         aria-expanded={open}
         aria-controls="menu-movil"
         onClick={() => setOpen((value) => !value)}
-        className="flex h-10 w-10 items-center justify-center rounded-md border border-neutral-300"
+        className="press flex h-10 w-10 items-center justify-center rounded-md border border-neutral-300"
       >
         <svg
           width="18"
@@ -39,7 +39,7 @@ export default function MobileMenu() {
         <nav
           id="menu-movil"
           aria-label="Menú móvil"
-          className="absolute left-0 right-0 top-full z-50 border-b border-neutral-200 bg-[#f7f4ee] px-6 pb-6 pt-2"
+          className="menu-enter absolute left-0 right-0 top-full z-50 border-b border-neutral-200 bg-[#f7f4ee] px-6 pb-6 pt-2"
         >
           <ul>
             {navigation.map((item) => (
@@ -58,7 +58,7 @@ export default function MobileMenu() {
           <Link
             href="/productos"
             onClick={() => setOpen(false)}
-            className="mt-6 block rounded-md bg-olive px-5 py-3 text-center text-sm font-medium text-white"
+            className="press mt-6 block rounded-md bg-olive px-5 py-3 text-center text-sm font-medium text-white"
           >
             Ver productos
           </Link>

@@ -7,6 +7,7 @@
   --sand: #efe7db;
   --stone: #8c8b88;
   --olive: #4a5a40;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 @theme inline {
@@ -32,4 +33,85 @@ h3 {
   font-family: var(--font-cormorant), Georgia, serif;
   font-variant-numeric: lining-nums;
   font-feature-settings: "lnum" 1;
+}
+
+/* ---- Movimiento y respuesta al toque ----
+   Reglas: solo transform y opacity, menos de 300 ms, curva ease-out,
+   y sin movimiento si la persona pidió reducirlo. */
+
+/* Botones y links con forma de botón: se hunden un poco al presionar. */
+.press {
+  transition:
+    transform 160ms var(--ease-out),
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.press:active {
+  transform: scale(0.97);
+}
+
+/* Tarjetas grandes: el mismo efecto, más suave. */
+.press-card {
+  transition:
+    transform 160ms var(--ease-out),
+    background-color 160ms ease;
+}
+
+.press-card:active {
+  transform: scale(0.98);
+}
+
+/* Entrada de tarjetas: aparecen de a una (--i = posición, máximo 5). */
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.enter {
+  animation: enter 300ms var(--ease-out) backwards;
+  animation-delay: calc(var(--i, 0) * 50ms);
+}
+
+/* Menú móvil: baja suave desde el botón. */
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.menu-enter {
+  animation: menu-in 180ms var(--ease-out) backwards;
+}
+
+/* Cambio de foto en la ficha de producto. */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fade-in 200ms ease-out backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .press:active,
+  .press-card:active {
+    transform: none;
+  }
+
+  .enter,
+  .menu-enter {
+    animation: fade-in 200ms ease-out backwards;
+    animation-delay: 0ms;
+  }
 }

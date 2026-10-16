@@ -5,7 +5,7 @@ type RitualNavProps = {
   activeId?: string;
 };
 
-const base = "rounded-md border px-4 py-2 text-sm transition-colors";
+const base = "press rounded-md border px-4 py-2 text-sm";
 const active = "border-olive bg-olive text-white";
 const inactive = "border-neutral-300 hover:border-olive";
 

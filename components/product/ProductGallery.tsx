@@ -10,6 +10,7 @@ type ProductGalleryProps = {
 
 export default function ProductGallery({ images, alt }: ProductGalleryProps) {
   const [active, setActive] = useState(0);
+  const [interacted, setInteracted] = useState(false);
   const current = images[active] ?? images[0];
 
   return (
@@ -23,7 +24,7 @@ export default function ProductGallery({ images, alt }: ProductGalleryProps) {
             fill
             priority={active === 0}
             sizes="(min-width: 768px) 440px, 90vw"
-            className="object-contain"
+            className={`object-contain ${interacted ? "fade-in" : ""}`}
           />
         )}
       </div>
@@ -34,10 +35,13 @@ export default function ProductGallery({ images, alt }: ProductGalleryProps) {
             <li key={src}>
               <button
                 type="button"
-                onClick={() => setActive(index)}
+                onClick={() => {
+                  setInteracted(true);
+                  setActive(index);
+                }}
                 aria-label={`Ver foto ${index + 1} de ${images.length}`}
                 aria-current={index === active}
-                className={`relative block aspect-square w-full overflow-hidden rounded-lg border-2 bg-white ${
+                className={`press relative block aspect-square w-full overflow-hidden rounded-lg border-2 bg-white ${
                   index === active ? "border-olive" : "border-transparent"
                 }`}
               >

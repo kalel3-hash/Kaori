@@ -5,13 +5,15 @@ import { Ritual } from "@/types/ritual";
 
 type RitualCardProps = {
   ritual: Ritual;
+  index?: number;
 };
 
-export default function RitualCard({ ritual }: RitualCardProps) {
+export default function RitualCard({ ritual, index = 0 }: RitualCardProps) {
   return (
     <Link
       href={`/productos/ritual/${ritual.id}`}
-      className="group block overflow-hidden rounded-xl bg-[#efe7db] transition-colors hover:bg-[#e6dccb]"
+      className="group enter press-card block overflow-hidden rounded-xl bg-[#efe7db] hover:bg-[#e6dccb]"
+      style={{ "--i": Math.min(index, 5) } as React.CSSProperties}
     >
       <article>
         <ImageSlot
