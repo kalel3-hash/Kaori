@@ -16,5 +16,5 @@ export const site = {
 
   // Planilla de Google Sheets publicada como CSV (hoja "Productos").
   catalogUrl:
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0aRL_HG4qe5m6aI36yN7Na_YI_fQBHRm-0fNKZmm-eFuUVjjmXWreF5FF1bixkA/pub?gid=273698736&single=true&output=csv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQVoehsPLEvm5SvnwJxJFDvRrDgrBuspfDtg0O98ESpaqeEELW4Gu1syqCVTwUd5qfkn8xo0LvS0UT7/pub?gid=273698736&single=true&output=csv",
 };
