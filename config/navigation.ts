@@ -8,6 +8,10 @@ export const navigation = [
     href: "/productos",
   },
   {
+    label: "Combos",
+    href: "/combos",
+  },
+  {
     label: "Nosotros",
     href: "/sobre-kaori",
   },

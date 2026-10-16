@@ -26,10 +26,16 @@ export async function getProducts(): Promise<Product[]> {
       throw new Error(`La planilla respondió con estado ${response.status}.`);
     }
 
-    const { products, skipped } = parseCatalog(await response.text());
+    const { products, skipped, warnings } = parseCatalog(
+      await response.text()
+    );
 
     if (skipped.length > 0) {
       console.warn(`[catálogo] Filas omitidas: ${skipped.join(" | ")}`);
+    }
+
+    if (warnings.length > 0) {
+      console.warn(`[catálogo] Avisos: ${warnings.join(" | ")}`);
     }
 
     return products;

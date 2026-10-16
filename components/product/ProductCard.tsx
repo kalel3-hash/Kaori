@@ -39,6 +39,11 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
             <p className="font-medium">
               {`$${product.price.toLocaleString("es-AR")}`}
             </p>
+            {product.available && (product.comboDiscount ?? 0) > 0 && (
+              <p className="mt-1 text-olive">
+                {`${product.comboDiscount}% off en combo`}
+              </p>
+            )}
             {!product.available && (
               <p className="mt-1 text-[#8c8b88]">Agotado temporalmente</p>
             )}

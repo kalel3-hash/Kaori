@@ -1,9 +1,11 @@
 import { rituals } from "@/data/rituals";
+import { COMBO_MAX_DISCOUNT } from "@/lib/combo";
 import { Product } from "@/types/product";
 
 export type CatalogResult = {
   products: Product[];
   skipped: string[];
+  warnings: string[];
 };
 
 const REQUIRED_HEADERS = [
@@ -92,6 +94,36 @@ function parseYesNo(value: string): boolean | null {
   return null;
 }
 
+// Descuento en combo: vacío o 0 = sin descuento. Acepta "10" o "10%".
+// Devuelve un entero de 1 al tope, o un mensaje si el valor no es válido.
+function parseComboDiscount(
+  value: string
+): { discount?: number; warning?: string } {
+  const cleaned = value.replace(/[%\s]/g, "");
+
+  if (cleaned === "" || cleaned === "0") {
+    return {};
+  }
+
+  if (!/^\d+$/.test(cleaned)) {
+    return { warning: `descuento_combo inválido ("${value}"), se ignora.` };
+  }
+
+  const discount = Number(cleaned);
+
+  if (discount === 0) {
+    return {};
+  }
+
+  if (discount > COMBO_MAX_DISCOUNT) {
+    return {
+      warning: `descuento_combo supera el tope de ${COMBO_MAX_DISCOUNT}% ("${value}"), se ignora.`,
+    };
+  }
+
+  return { discount };
+}
+
 function parsePrice(value: string): number | null {
   const cleaned = value.replace(/[$\s]/g, "");
 
@@ -135,6 +167,7 @@ export function parseCatalog(text: string): CatalogResult {
   const ritualIds = rituals.map((ritual) => ritual.id);
   const products: Product[] = [];
   const skipped: string[] = [];
+  const warnings: string[] = [];
   const seen = new Set<string>();
 
   rows.slice(1).forEach((row, index) => {
@@ -213,6 +246,13 @@ export function parseCatalog(text: string): CatalogResult {
       return;
     }
 
+    // Columna opcional: un descuento inválido no omite la fila, solo se ignora.
+    const comboResult = parseComboDiscount(column(row, "descuento_combo"));
+
+    if (comboResult.warning) {
+      warnings.push(`${label}: ${comboResult.warning}`);
+    }
+
     seen.add(slug);
     products.push({
       id: slug,
@@ -228,8 +268,9 @@ export function parseCatalog(text: string): CatalogResult {
         extraNames.length > 0
           ? extraNames.map((name) => `/images/products/${name}`)
           : undefined,
+      comboDiscount: comboResult.discount,
     });
   });
 
-  return { products, skipped };
+  return { products, skipped, warnings };
 }

@@ -102,6 +102,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
               {`$${product.price.toLocaleString("es-AR")}`}
             </p>
 
+            {product.available && (product.comboDiscount ?? 0) > 0 && (
+              <p className="mb-2 text-sm text-olive">
+                {`${product.comboDiscount}% off en combo. `}
+                <Link href="/combos" className="underline">
+                  Armá tu combo
+                </Link>{" "}
+                sumándolo a otro producto.
+              </p>
+            )}
+
             {!product.available && (
               <p className="mb-6 text-sm text-[#8c8b88]">
                 Agotado temporalmente
