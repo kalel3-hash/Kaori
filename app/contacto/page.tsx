@@ -3,11 +3,15 @@ import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { site } from "@/data/site";
+import { buildOpenGraph } from "@/lib/seo";
+
+const description =
+  "Consultanos sobre productos, disponibilidad, pagos o entregas.";
 
 export const metadata: Metadata = {
   title: "Contacto",
-  description:
-    "Consultanos sobre productos, disponibilidad, pagos o entregas.",
+  description,
+  openGraph: buildOpenGraph({ title: "Contacto", description }),
 };
 
 const topics = [

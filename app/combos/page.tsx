@@ -5,11 +5,15 @@ import ComboBuilder from "@/components/combo/ComboBuilder";
 import { site } from "@/data/site";
 import { COMBO_MIN_ITEMS } from "@/lib/combo";
 import { getProducts } from "@/lib/products";
+import { buildOpenGraph } from "@/lib/seo";
+
+const description =
+  "Elegí dos o más productos y mirá cuánto ahorrás al llevarlos juntos.";
 
 export const metadata: Metadata = {
   title: "Armá tu combo",
-  description:
-    "Elegí dos o más productos y mirá cuánto ahorrás al llevarlos juntos.",
+  description,
+  openGraph: buildOpenGraph({ title: "Armá tu combo", description }),
 };
 
 export default async function CombosPage() {

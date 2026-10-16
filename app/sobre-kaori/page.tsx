@@ -3,11 +3,15 @@ import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { site } from "@/data/site";
+import { buildOpenGraph } from "@/lib/seo";
+
+const description =
+  "Sendero Kaori es una marca de bienestar natural que reúne productos seleccionados para acompañar pequeños rituales cotidianos.";
 
 export const metadata: Metadata = {
   title: "Sobre Sendero Kaori",
-  description:
-    "Sendero Kaori es una marca de bienestar natural que reúne productos seleccionados para acompañar pequeños rituales cotidianos.",
+  description,
+  openGraph: buildOpenGraph({ title: "Sobre Sendero Kaori", description }),
 };
 
 const principles = [

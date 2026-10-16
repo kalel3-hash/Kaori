@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { site } from "@/data/site";
+import { buildOpenGraph } from "@/lib/seo";
 
 const inter = localFont({
   src: "./fonts/inter-latin-wght-normal.woff2",
@@ -20,11 +22,16 @@ const cormorant = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
     default: "Sendero Kaori",
     template: "%s | Sendero Kaori",
   },
   description: "Pequeños rituales para una vida más equilibrada.",
+  openGraph: buildOpenGraph({
+    title: "Sendero Kaori",
+    description: "Pequeños rituales para una vida más equilibrada.",
+  }),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

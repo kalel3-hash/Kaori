@@ -7,6 +7,7 @@ import ProductGallery from "@/components/product/ProductGallery";
 import ProductGrid from "@/components/product/ProductGrid";
 import { rituals } from "@/data/rituals";
 import { site } from "@/data/site";
+import { buildOpenGraph } from "@/lib/seo";
 import {
   getProductBySlug,
   getProducts,
@@ -37,9 +38,19 @@ export async function generateMetadata({
     return { title: "Producto" };
   }
 
+  const title = `${product.name} | ${product.brand}`;
+  const description =
+    product.description ?? `${product.name}, de ${product.brand}.`;
+
   return {
-    title: `${product.name} | ${product.brand}`,
-    description: product.description,
+    title,
+    description,
+    openGraph: buildOpenGraph({
+      title,
+      description,
+      image: product.image,
+      imageAlt: product.name,
+    }),
   };
 }
 

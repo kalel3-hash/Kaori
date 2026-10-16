@@ -1,6 +1,9 @@
 export const site = {
   name: "Sendero Kaori",
 
+  // Dirección pública del sitio. Cambiarla acá cuando exista dominio propio.
+  url: "https://kaori-sigma.vercel.app",
+
   slogan: "Pequeños rituales para una vida más equilibrada.",
 
   description:
